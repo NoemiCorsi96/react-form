@@ -14,11 +14,23 @@ Impostare il lavoro su più componenti. */
 
 function App() {
 
+  const [newTitle, setNewTitle] = useState('');
+  const [copyTitle, setCopyTitle] = useState(titles);
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('Cliccare Submit');
+    setCopyTitle([newTitle, ...copyTitle])
+    setNewTitle('')
 
+  }
   return (
     <>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder='Inserisci un titolo di un articolo del blog' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+      </form>
+
       <ul>
-        {titles.map((title, i) =>
+        {copyTitle.map((title, i) =>
           <li key={i}>
             {title}
           </li>
