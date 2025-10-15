@@ -23,6 +23,11 @@ function App() {
     setNewTitle('')
 
   }
+
+  function handleTrash(i) {
+    const filteredTitle = copyTitle.filter((_, index) => index != i)
+    setCopyTitle(filteredTitle)
+  }
   return (
     <>
       <div className='container'>
@@ -32,8 +37,14 @@ function App() {
 
         <ul>
           {copyTitle.map((title, i) =>
-            <li key={i}>
-              {title}
+            <li className='list-group-item d-flex justify-content-between mt-2 mb-2' key={i}>
+              <span>
+                {title}
+              </span>
+
+              <button className='btn btn-danger' onClick={() => handleTrash(i)}>
+                <i className='bi bi-trash'></i>
+              </button>
             </li>
           )}
 
