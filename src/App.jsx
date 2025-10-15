@@ -25,18 +25,20 @@ function App() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='Inserisci un titolo di un articolo del blog' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
-      </form>
+      <div className='container'>
+        <form className='mt-3 mb-5' onSubmit={handleSubmit}>
+          <input className='form-control' type="text" placeholder='Inserisci un titolo di un articolo del blog' value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
+        </form>
 
-      <ul>
-        {copyTitle.map((title, i) =>
-          <li key={i}>
-            {title}
-          </li>
-        )}
+        <ul>
+          {copyTitle.map((title, i) =>
+            <li key={i}>
+              {title}
+            </li>
+          )}
 
-      </ul>
+        </ul>
+      </div>
     </>
   )
 }
