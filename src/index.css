@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  /* Imposta il tipo di marker come quadrato */
+  list-style-type: square;
+  /* (opzionale) margine sinistro per far spazio al marker */
+  padding-left: 20px;
+}
